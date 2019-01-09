@@ -29,4 +29,10 @@ class Ad extends BaseWithDb
         return $this->writeJson(Status::CODE_OK, $data, 'success');
     }
 
+    function aeup(){
+        $dbConnect = $this->getDbConnection();
+        $database = $dbConnect->rawQuery('UPDATE think_wxurls set jump_reads=jump_reads+1 WHERE id ='. 1);
+        return $this->writeJson(Status::CODE_OK, $database, 'success');
+    }
+
 }

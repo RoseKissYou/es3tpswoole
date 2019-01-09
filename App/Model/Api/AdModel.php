@@ -14,31 +14,28 @@ class AdModel extends BaseModel
     protected $table = 'think_wxurls';
 
     function aeup(){
-      $data =   $this->getDbConnection()->where('id',1)->update('jump_reads=jump_reads+1 ');
-        return empty($data) ? null : $data;
+        $dbConnect = $this->getDbConnection();
+        $database = $dbConnect->rawQuery('UPDATE think_wxurls set jump_reads=jump_reads+1 WHERE id ='. 1);
+        return $this->writeJson(Status::CODE_OK, $database, 'success');
     }
 
     function geturl(int $id){
-        $url_postfix = $this->getDbConnection()->where('id',$id)->getOne($this->table);
-//        $url_postfix = $url_postfix[0];
+        $dbConnect = $this->getDbConnection();
+        $url_postfix = $dbConnect->where('id',$id)->getOne($this->table);
         if($url_postfix){
             $map = 'status = 1 AND type = 2 AND pid = '. $url_postfix['pid'];
-            $url_domain = $this->getDbConnection()->where($map)->getOne($this->table);
+            $url_domain = $dbConnect->where($map)->getOne($this->table);
             if($url_domain){
                 // 自增访问量
-                $this->getDbConnection()->where('id',$url_domain['id'])->update('jump_reads=jump_reads+1 ');
-
-
+                $dbConnect->rawQuery('UPDATE think_wxurls set jump_reads=jump_reads+1 WHERE id ='. $url_domain['id']);
+                $dbConnect->rawQuery('UPDATE think_wxurls set jump_reads=jump_reads+1 WHERE id = ' . $id);
+                return $url_domain['domain'].'/'.$url_postfix['postfix'] .'/index.html' ;
+            }else{
+                return $url_postfix['domain'].'/'.$url_postfix['postfix'].'/index.html';
             }
-
-            return [
-                'url_postfix' => $url_postfix,
-                'url_domain'  => $url_domain,
-            ];
         }else{
             return empty($url_postfix) ? null : $url_postfix;
         }
-//        return empty($data) ? nul : $data;
     }
 
 
