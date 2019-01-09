@@ -1,7 +1,8 @@
 # EASYSWOOLE DEMO
 git clone https://github.com/RoseKissYou/es3tpswoole
 
-
+模板消息跳转API
+http://es3.68dj.cn:9509/api/ad/manyurls?id=1
 
 
 ## 如何运行DEMO
