@@ -8,7 +8,7 @@
 
 return [
     'host'=>'127.0.0.1',
-    'user'=>'es3',
-    'password'=>'123456',
-    'database'=>'es3'
+    'user'=>'root',
+    'password'=>'myroot123',
+    'database'=>'think_wechat'
 ];

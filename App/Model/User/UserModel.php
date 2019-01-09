@@ -13,7 +13,7 @@ use App\Model\BaseModel;
 
 class UserModel extends BaseModel
 {
-    protected $table = 'user';
+    protected $table = 'think_user';
 
     /*
      * 获取列表数据

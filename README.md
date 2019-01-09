@@ -1,6 +1,8 @@
 # EASYSWOOLE DEMO
+git clone https://github.com/RoseKissYou/es3tpswoole
 
-聊天室Demo请切换到 `3.x-chat` 分支， [点击链接直达](https://github.com/easy-swoole/demo/tree/3.x-chat)
+
+
 
 ## 如何运行DEMO
 

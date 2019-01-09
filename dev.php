@@ -10,7 +10,7 @@ return [
     'SERVER_NAME' => "EasySwoole",
     'MAIN_SERVER' => [// 默认Server配置
         'LISTEN_ADDRESS' => '0.0.0.0',// 默认Server监听的地址**(3.0.7以前 为 HOST)
-        'PORT'           => 9501,//默认Server监听的端口
+        'PORT'           => 9509,//默认Server监听的端口
         'SERVER_TYPE'    => EASYSWOOLE_WEB_SOCKET_SERVER, // 可选为 EASYSWOOLE_SERVER  EASYSWOOLE_WEB_SERVER EASYSWOOLE_WEB_SOCKET_SERVER
         'SOCK_TYPE'      => SWOOLE_TCP,//该配置项当为SERVER_TYPE值为TYPE_SERVER时有效
         'RUN_MODEL'      => SWOOLE_PROCESS,// 默认Server的运行模式
@@ -40,13 +40,13 @@ return [
     /*################ MYSQL CONFIG ##################*/
 
     'MYSQL' => [
-        'host'          => '192.168.75.1',
+        'host'          => '127.0.0.1',
         'port'          => '3306',
         'user'          => 'root',
         'timeout'       => '5',
         'charset'       => 'utf8mb4',
-        'password'      => 'root',
-        'database'      => 'cry',
+        'password'      => 'myroot123',
+        'database'      => 'think_wechat',
         'POOL_MAX_NUM'  => '20',
         'POOL_TIME_OUT' => '0.1',
     ],
