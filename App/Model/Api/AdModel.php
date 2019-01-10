@@ -38,27 +38,4 @@ class AdModel extends BaseModel
         }
     }
 
-
-
-    //
-    function geturl1(int $id){
-        $data = $this->getDbConnection()->where('id',$id)->getOne($this->table);
-        return empty($data) ? null : $data;
-    }
-
-    function geturl2(int $id){
-        $url_postfix = $this->getDbConnection()->where('id',$id)->getOne($this->table);
-//        $url_postfix = $url_postfix[0];
-        if($url_postfix){
-            $map = 'status = 1 AND type = 2 AND pid = '. $url_postfix['pid'];
-            $url_domain = $this->getDbConnection()->where($map)->getOne($this->table);
-            return [
-                'url_postfix' => $url_postfix,
-                'url_domain'  => $url_domain,
-            ];
-        }else{
-            return empty($url_postfix) ? null : $url_postfix;
-        }
-//        return empty($data) ? nul : $data;
-    }
 }

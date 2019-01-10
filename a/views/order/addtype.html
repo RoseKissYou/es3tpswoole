@@ -1,0 +1,44 @@
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs12">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <a href="http://www.layui.com/doc/modules/table.html" target="_blank">
+                        <span>http://www.layui.com/doc/modules/table.html</span>
+                    </a>
+                    -----
+                    <a href="http://www.layui.com/demo/table.html" target="_blank">
+                        <span>新增分类</span>
+                    </a>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-card-header">
+                        <!-- <span>所有会员列表</span> -->
+                        <a href="#/member/all/edit" class="layui-btn layui-btn-xs">
+                            <i class="layui-icon">&#xe654;</i>
+                            <span>新增</span>
+                        </a>
+                        <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-primary" id="search_hash">
+                            <i class="layui-icon">&#xe615;</i>
+                        </a>
+                    </div>
+                    <div class="layui-card-body">
+                        <table id="demo_hash" lay-filter="test"></table>
+                        <script type="text/html" id="barDemo_hash">
+                            <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+                            <!-- <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a> -->
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<style scoped>
+
+</style>

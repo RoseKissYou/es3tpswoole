@@ -21,7 +21,7 @@ use App\Model\Api\AdModel;
 
 class Ad extends BaseWithDb
 {
-    // 模板消息跳转链接API
+    // 模板消息跳转链接API 完成
     function manyurls(){
         $params = $this->request()->getRequestParam();
         $model = new AdModel($this->getDbConnection());
